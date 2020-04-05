@@ -3,9 +3,12 @@ const connection = require('../database/connect');
 
 module.exports = {
 
-    async list(req, res) {
+    async index(req, res) {
+
         const ongs = await connection('ongs').select('*');
+
         return res.json(ongs);
+
     },
 
     async create(req, res) {
